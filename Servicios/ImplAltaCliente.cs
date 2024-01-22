@@ -63,6 +63,10 @@ namespace Repaso1.Servicios
                     {
                         Console.WriteLine("\n\t INICIO DE SESIÓN CORRECTO");
                     }
+                    else
+                    {
+                        Console.WriteLine("\n\t No puede acceder ya que no esta validado");
+                    }
                 }
             }
             
