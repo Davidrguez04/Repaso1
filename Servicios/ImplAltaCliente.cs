@@ -25,6 +25,9 @@ namespace Repaso1.Servicios
         private ClienteDto datosCliente()
         {
             ClienteDto cliente=new ClienteDto();
+            Random random = new Random();
+
+            cliente.IdCliente=random.Next();
 
             Console.Write("\n\tIntroduzca su dni: ");
             cliente.DniCliente = Console.ReadLine();

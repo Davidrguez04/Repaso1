@@ -42,7 +42,11 @@ namespace Repaso1.Servicios
         {
             foreach(ClienteDto cliente in listaClientes)
             {
-                Console.WriteLine(cliente.ToString());
+                Console.WriteLine("\t%%%%%%%%%");
+                Console.WriteLine("\tDNI: "+cliente.DniCliente);
+                Console.WriteLine("\tNombre: "+cliente.NombreCompletoCliente);
+                Console.WriteLine("\tValidación: "+cliente.EsValidado);
+                Console.WriteLine("\t%%%%%%%%%\n");
             }
         }
 
