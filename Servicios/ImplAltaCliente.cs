@@ -12,28 +12,47 @@ namespace Repaso1.Servicios
     {
         public void darAltaCliente(List<ClienteDto>listaClientes)
         {
-            ClienteDto cliente= datosCliente();  
-            
-            /*foreach(ClienteDto clienteDto in listaClientes) {
-                Console.WriteLine(clienteDto.ToString());
-                cliente = clienteDto;
-            
-            }*/
+            ClienteDto cliente= datosCliente();
+
+            int contador=1;
+            foreach (ClienteDto clienteDto in listaClientes)
+            {
+               
+                 cliente.IdCliente=contador;
+                contador++;
+            }
+
             listaClientes.Add(cliente);
+            contador++;
         }
 
         private ClienteDto datosCliente()
         {
             ClienteDto cliente=new ClienteDto();
-            Random random = new Random();
-
-            cliente.IdCliente=random.Next();
-
-            Console.Write("\n\tIntroduzca su dni: ");
+            
+        Console.Write("\n\tIntroduzca su dni: ");
             cliente.DniCliente = Console.ReadLine();
+
+            
 
             Console.Write("\n\tIntroduzca su nombre completo: ");
             cliente.NombreCompletoCliente = Console.ReadLine();
+
+            string[] palabras = cliente.NombreCompletoCliente.Split(' ');
+            if (palabras.Length >= 3)
+            {
+                // El primer elemento es el nombre
+                string nombre = palabras[0];
+
+                // Los dos últimos elementos son los apellidos
+                string apellido1 = palabras[palabras.Length - 2];
+                string apellido2 = palabras[palabras.Length - 1];
+
+                // Imprimir los resultados
+                Console.WriteLine("Nombre: " + nombre);
+                Console.WriteLine("Apellido1: " + apellido1);
+                Console.WriteLine("Apellido2: " + apellido2);
+            }
 
             Console.Write("\n\tIntroduzca su email: ");
             cliente.EmailCliente = Console.ReadLine();
